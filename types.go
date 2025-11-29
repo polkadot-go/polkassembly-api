@@ -231,6 +231,7 @@ type Comment struct {
 	CreatedAt time.Time   `json:"created_at"`
 	UpdatedAt time.Time   `json:"updated_at"`
 	Replies   []Comment   `json:"replies,omitempty"`
+	ParentID  *string     `json:"parent_id,omitempty"`
 	Sentiment int         `json:"sentiment"`
 	IsDeleted bool        `json:"is_deleted"`
 }
