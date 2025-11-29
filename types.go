@@ -224,16 +224,18 @@ type ContentSummary struct {
 }
 
 type Comment struct {
-	ID        string      `json:"id"`
-	Content   interface{} `json:"content"`
-	Username  string      `json:"username"`
-	UserID    int         `json:"user_id"`
-	CreatedAt time.Time   `json:"created_at"`
-	UpdatedAt time.Time   `json:"updated_at"`
-	Replies   []Comment   `json:"replies,omitempty"`
-	ParentID  *string     `json:"parent_id,omitempty"`
-	Sentiment int         `json:"sentiment"`
-	IsDeleted bool        `json:"is_deleted"`
+	ID             string      `json:"id"`
+	Content        interface{} `json:"content"`
+	Username       string      `json:"username"`
+	UserID         int         `json:"user_id"`
+	CreatedAt      time.Time   `json:"created_at"`
+	UpdatedAt      time.Time   `json:"updated_at"`
+	Replies        []Comment   `json:"replies,omitempty"`
+	Children       []Comment   `json:"children,omitempty"`
+	ParentID       *string     `json:"parent_id,omitempty"`
+	ParentCommentID *string    `json:"parentCommentId,omitempty"`
+	Sentiment      int         `json:"sentiment"`
+	IsDeleted      bool        `json:"is_deleted"`
 }
 
 type ActivityFeedItem struct {
